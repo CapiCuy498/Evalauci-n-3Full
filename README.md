@@ -4,7 +4,7 @@
 ## Subir tus archivos a git
 
 
-git clone https://github.com/CapiCuy498/Prueba-2F.git
+git clone https://github.com/CapiCuy498/Evalauci-n-3Full.git
 
 para copiar el repositorio y traer lo que contiene 
 
