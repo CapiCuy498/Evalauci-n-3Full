@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -23,4 +24,7 @@ public class Valoracion {
 
     @Column(name = "Puntuacion_Valoracio" ,nullable = false)
     private String Puntuacion_Valoracio; 
+
+    @OneToOne(mappedBy = "valoracion")
+private Reseña resena;
 }
