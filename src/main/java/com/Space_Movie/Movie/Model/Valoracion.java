@@ -26,5 +26,5 @@ public class Valoracion {
     private String Puntuacion_Valoracio; 
 
     @OneToOne(mappedBy = "valoracion")
-private Reseña resena;
+    private Reseña resena;
 }

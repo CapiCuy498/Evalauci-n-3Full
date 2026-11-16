@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,4 +35,8 @@ public class Reseña {
     @ManyToOne 
     @JoinColumn(name = "Usuario", nullable=false)
     private Usuario usuario; 
+
+    @OneToOne
+    @JoinColumn(name = "valoracion_id", nullable = false)
+    private Valoracion valoracion;
 }
