@@ -9,6 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,10 +26,8 @@ public class Reseña {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
-    @Column(name = "Nombre", nullable = false)
-    private String Nombre;
-
+    
+    @NotBlank(message = "El contenido de la reseña no puede estar vacio")
     @Column(name = "Contenido_Reseña")
     private String ContenidoReseña; 
 

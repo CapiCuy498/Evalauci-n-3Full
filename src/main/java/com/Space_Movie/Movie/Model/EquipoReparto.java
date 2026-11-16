@@ -2,6 +2,7 @@ package com.Space_Movie.Movie.Model;
 
 
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,12 +10,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
-
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Data
-@Table(name="Equipo_Direccion")
-public class Equipo_Direccion {
+@Table(name="Equipo_Reparto")
+public class EquipoReparto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,10 +31,8 @@ public class Equipo_Direccion {
     private String Apellido;
 
     @Column(name = "Edad" ,nullable = false)
-    private String Edad;
-
-    @Column(name = "Cargo" ,nullable = false)
-    private String Cargo;
-
-
+    private int Edad;
+    
+    @Column(name = "Personaje_Intepretado" ,nullable = false)
+    private String Personaje_Intepretado;
 }

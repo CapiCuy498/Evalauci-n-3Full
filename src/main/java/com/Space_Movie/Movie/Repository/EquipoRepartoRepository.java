@@ -3,9 +3,9 @@ package com.Space_Movie.Movie.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.Space_Movie.Movie.Model.Equipo_Reparto;
+import com.Space_Movie.Movie.Model.EquipoReparto;
 
 @Repository
-public interface Equipo_RepartoRepository extends JpaRepository<Equipo_Reparto, Integer> {
+public interface EquipoRepartoRepository extends JpaRepository<EquipoReparto, Integer> {
 
 }
