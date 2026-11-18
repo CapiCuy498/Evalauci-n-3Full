@@ -1,5 +1,7 @@
 package com.Space_Movie.Movie.Model;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -49,6 +51,24 @@ public class ProductoAudiovisual {
     @Max(value = 1000, message = "La duración no puede superar los 1000 minutos")
     @Column(name = "duracion_minutos")
     private Integer duracionMinutos;
+
+    @NotNull(message = "La fecha de estreno no debe quedar vacía")
+    @Column(name = "fecha_estreno", nullable = false)
+    private LocalDate fechaEstreno;
+
+    @Size(max = 100, message = "El género no puede superar los 100 caracteres")
+    @Column(name = "genero", length = 100)
+    private String genero;
+
+    @Min(value = 0, message = "La aprobación del público no puede ser negativa")
+    @Max(value = 100, message = "La aprobación del público no puede superar 100")
+    @Column(name = "aprobacion_publico")
+    private Integer aprobacionPublico;
+
+    @Min(value = 0, message = "La aprobación de la crítica no puede ser negativa")
+    @Max(value = 100, message = "La aprobación de la crítica no puede superar 100")
+    @Column(name = "aprobacion_critica")
+    private Integer aprobacionCritica;
 
     @NotNull(message = "El equipo de dirección no puede ser nulo")
     @ManyToOne

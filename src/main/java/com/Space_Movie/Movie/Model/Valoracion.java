@@ -21,8 +21,8 @@ public class Valoracion {
     private Integer id;
 
     @NotNull(message = "La puntuación no puede estar vacía")
-    @Min(value = 1, message = "La valoración mínima es 1")
-    @Max(value = 10, message = "La valoración máxima es 10")
+    @Min(value = 0, message = "La valoración mínima es 0")
+    @Max(value = 100, message = "La valoración máxima es 100")
     @Column(name = "puntuacion", nullable = false)
     private Integer puntuacion;
 }
