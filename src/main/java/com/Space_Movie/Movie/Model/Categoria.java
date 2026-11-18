@@ -6,9 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,6 +23,8 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "categoria", nullable = false)
-    private String categoria;
+    @NotBlank(message = "El nombre de la categoría no puede estar vacío")
+    @Size(min = 3, max = 50, message = "La categoría debe tener entre 3 y 50 caracteres")
+    @Column(name = "nombre", nullable = false, length = 50)
+    private String nombre;
 }
