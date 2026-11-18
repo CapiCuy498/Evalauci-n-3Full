@@ -6,5 +6,5 @@ import lombok.Data;
 public class TipoUsuarioDTO {
 
     private Integer id;
-    private String nombre;
+    private String Nombre;
 }
