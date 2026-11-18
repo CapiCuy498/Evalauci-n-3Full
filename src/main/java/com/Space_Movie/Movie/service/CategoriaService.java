@@ -42,7 +42,7 @@ public class CategoriaService {
     public CategoriaDTO actualizarCategoria(Integer id, Categoria categoriaDetalles) {
         Categoria categoriaExistente = categoriaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Categoría no encontrada con la ID: " + id));
-        categoriaExistente.setCategoria(categoriaDetalles.getCategoria());
+        categoriaExistente.setNombre(categoriaDetalles.getNombre());
 
         Categoria categoriaActualizada = categoriaRepository.save(categoriaExistente);
         log.info("Categoría con ID: {} actualizada", id);
@@ -60,7 +60,7 @@ public class CategoriaService {
     private CategoriaDTO convertirADTO(Categoria categoria) {
         CategoriaDTO dto = new CategoriaDTO();
         dto.setId(categoria.getId());
-        dto.setCategoria(categoria.getCategoria());
+        dto.setCategoria(categoria.getNombre());
         return dto;
     }
 }
