@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Transactional(readOnly = true)
-@Slf4j
+@Slf4j  
 public class CategoriaService {
 
     @Autowired
@@ -63,7 +63,7 @@ public class CategoriaService {
             throw new RuntimeException("Categoría no encontrada con la ID: " + id);
         }
         categoriaRepository.deleteById(id);
-        log.info("Categoría con ID: {} ha sido eliminada exitosamente", id);
+        log.info("Categoría con ID: {} ha sido eliminada exitosamente.", id);
     }
 
     private CategoriaDTO convertirADTO(Categoria categoria) {
